@@ -1,4 +1,4 @@
-module singo
+module github.com/hd2yao/giligili
 
 go 1.20
 
