@@ -39,7 +39,7 @@ func ListVideo(c *gin.Context) {
 	}
 }
 
-// UpdateVideo 更新视频的接口
+// UpdateVideo 更新视频接口
 func UpdateVideo(c *gin.Context) {
 	service := service.UpdateVideoService{}
 	if err := c.ShouldBind(&service); err == nil {
@@ -48,4 +48,11 @@ func UpdateVideo(c *gin.Context) {
 	} else {
 		c.JSON(200, ErrorResponse(err))
 	}
+}
+
+// DeleteVideo 删除视频接口
+func DeleteVideo(c *gin.Context) {
+	service := service.DeleteVideoService{}
+	res := service.Delete(c.Param("id"))
+	c.JSON(200, res)
 }
