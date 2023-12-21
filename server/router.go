@@ -40,8 +40,8 @@ func NewRouter() *gin.Engine {
 
 		// 视频投稿接口
 		v1.POST("videos", api.CreateVideo)
-		//// 视频详情接口
-		//v1.GET("video/:id", api.ShowVideo)
+		// 视频详情接口
+		v1.GET("video/:id", api.ShowVideo)
 		//// 视频列表接口
 		//v1.GET("videos", api.ListVideo)
 		//// 更新视频接口
