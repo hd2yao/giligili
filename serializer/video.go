@@ -19,3 +19,12 @@ func BuildVideo(video model.Video) Video {
 		CreatedAt: video.CreatedAt.Unix(),
 	}
 }
+
+// BuildVideos 序列化视频列表
+func BuildVideos(video []model.Video) []Video {
+	var videos []Video
+	for _, item := range video {
+		videos = append(videos, BuildVideo(item))
+	}
+	return videos
+}
